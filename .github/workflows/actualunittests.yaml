@@ -125,8 +125,8 @@ jobs:
         run: pip install -e . --no-deps --no-build-isolation -vvv --verbose
       - name: Run unit tests
         run: |
-          pytest tests/ -vvv -s
-          EXIT_CODE=$?
+          pytest tests/ -vvv -s || EXIT_CODE=$?
+          EXIT_CODE=${EXIT_CODE:-0}
           echo "pytest EXIT_CODE: ${EXIT_CODE}"
           if [[ "$EXIT_CODE" != '0' ]] ; then
             echo 'pytest fail, sleeping so the user can exec in...'
