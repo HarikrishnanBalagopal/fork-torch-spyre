@@ -125,6 +125,7 @@ jobs:
         run: pip install -e . --no-deps --no-build-isolation -vvv --verbose
       - name: Run unit tests
         run: |
+          echo 'Run unit tests start'
           pytest tests/ -vvv -s || EXIT_CODE=$?
           EXIT_CODE=${EXIT_CODE:-0}
           echo "pytest EXIT_CODE: ${EXIT_CODE}"
@@ -134,3 +135,4 @@ jobs:
           else
             echo 'pytest success'
           fi
+          echo 'Run unit tests end'
