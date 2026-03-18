@@ -7,12 +7,11 @@ on:
         description: Git ref to checkout (e.g. refs/pull/N/head)
         required: true
         type: string
-# on:
-#   push:
-#     branches: [main]
-#     tags: ['*']
-#   pull_request:
-#     branches: [main]
+  push:
+    branches: [main]
+    tags: ['*']
+  pull_request:
+    branches: [main]
 
 concurrency:
   group: ${{ github.workflow }}-${{ inputs.checkout_ref }}
