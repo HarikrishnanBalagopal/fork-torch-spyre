@@ -35,8 +35,8 @@ jobs:
           echo DEBUG1
           docker images
           echo DEBUG2
-          echo docker run --rm --entrypoint bash ${IMAGE} echo foobar1234
-          docker run --rm --entrypoint bash ${IMAGE} echo foobar1234
+          echo docker run --rm --entrypoint bash ${IMAGE} -c echo foobar1234
+          docker run --rm --entrypoint bash ${IMAGE} -c echo foobar1234
           echo DEBUG3
 
 # jobs:
