@@ -1,11 +1,18 @@
-
 # https://docs.docker.com/build/ci/github-actions/
 # https://github.com/marketplace/actions/build-and-push-docker-images
 
 name: buildimages
 
+# on:
+#   push: null
+
 on:
   push:
+    branches: [main]
+    tags: ['*']
+  pull_request:
+    branches: [main]
+
 
 jobs:
   docker:
