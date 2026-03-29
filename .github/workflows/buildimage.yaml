@@ -29,8 +29,15 @@ jobs:
           DOCKER_CONTEXT=testcontainerimages
           ls -la ${DOCKER_CONTEXT}
           docker ps -a
+          echo DEBUG0
           docker build -t ${IMAGE} -f ${DOCKER_CONTEXT}/Dockerfile ${DOCKER_CONTEXT}
+          echo DEBUG1
+          docker images
+          echo DEBUG2
+          echo docker run --rm -it --entrypoint bash ${IMAGE} echo foobar1234
+          echo DEBUG3
           docker run --rm -it --entrypoint bash ${IMAGE} echo foobar1234
+          echo DEBUG4
 
 # jobs:
 #   docker:
