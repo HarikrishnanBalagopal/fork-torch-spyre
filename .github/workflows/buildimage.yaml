@@ -16,7 +16,8 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
+    runs-on: hb-test-org-runners-2
     steps:
       - uses: actions/checkout@v6
       - name: Set up Docker
